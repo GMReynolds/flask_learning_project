@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ducks R Us</title>
+    <!-- referencing the css stylesheet for the table -->
+    <link type="text/css" rel="stylesheet" href="static/css/style.css">
+    <!-- referencing the css stylesheet for the background -->
+    <link type="text/css" rel="stylesheet" href="static/css/rainbow.css">
+</head>
+<body>
+<div class="wrapper">
+
+<!-- using the user defined in the hello world method -->
+<h1>Hello {{ user }} </h1>
+    <a href="/logout">Logout</a>
+<p> Select one of our fantastic ducks from the selection below</p>
+<!-- defining the table contents and style -->
+<table style=" width:75%" class = "duckTable">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Image</th>
+    </tr>
+    <!-- Loops through the provided dictionary to fill in values into the table -->
+    {% for duck in list %}
+    <tr>
+        <td> {{ duck.name }}</td>
+        <td>£ {{ duck.price }}</td>
+        <td> {{ duck.score }} </td>
+        <td> <img class = "duckimg" src="{{ duck.image }}" alt = "No Image Available"> </td>
+    </tr>
+    <!-- Ending loop -->
+    {% endfor %}
+</table>
+    </div>
+<!-- Fancy javascript stuff goes at bottom of body (below the feet haha) -->
+</body>
+</html>

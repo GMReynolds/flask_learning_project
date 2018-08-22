@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ducks R Us signup</title>
+    <link type="text/css" rel="stylesheet" href="static/css/rainbow.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+<div class="wrapper">
+<h1> Join us</h1>
+<p> Would you like to buy a duck? Please enter your details below</p>
+<!-- Input text box for user to insert their name -->
+<form onsubmit="/signup" method="POST">
+    Name    : <input  type = text name = "username" id = "username">
+    <br>
+    Password: <input  type = password name = "username" id = "password">
+    <input type="submit">
+</form>
+    <br>
+
+    {% for duck in list %}
+    <img class="mySlides w3-animate-fading signupduckimg" src=" {{ duck.image }} ">
+    {% endfor %}
+</div>
+
+<script>
+
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+</body>
+</html>
